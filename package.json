@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@eslint/config-array": "^0.23.0",
+    "@eslint/object-schema": "^3.0.0",
+    "@fullcalendar/daygrid": "^6.1.19",
+    "@fullcalendar/interaction": "^6.1.19",
+    "@fullcalendar/react": "^6.1.19",
+    "@fullcalendar/timegrid": "^6.1.19",
+    "axios": "^1.13.2",
+    "eslint": "^9.39.1",
+    "glob": "^13.0.0",
+    "html5-qrcode": "^2.3.8",
+    "lucide-react": "^0.555.0",
+    "rimraf": "^6.1.2"
+  }
+}

@@ -51,6 +51,28 @@ The backend runs in Docker containers. This is the easiest way to get a fully fu
     
 3. Snipe-IT will be available at `http://localhost:8080`. The first run may take a few minutes to initialize the database.
 
+2. Copy the example environment file and fill in your own secrets:
+
+    ```bash
+    cp backend/.env.example backend/.env
+    # Edit backend/.env and set your own APP_KEY, DB_PASSWORD, and MYSQL_ROOT_PASSWORD
+    ```
+
+3. Start the backend services:
+
+    ```bash
+    cd backend
+    docker compose up -d
+    ```
+
+4. Access Snipe-IT at [http://localhost:8080](http://localhost:8080)
+
+---
+
+**Security Note:**
+- Never commit your real `.env` file to the repository. Only commit `.env.example` with placeholder values.
+- The `.gitignore` is already set up to protect your secrets.
+
 ### 2. Frontend Setup
 
 1. Navigate to the `frontend` directory:

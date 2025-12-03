@@ -2,8 +2,6 @@
 # It is based on the official Snipe-IT Docker repository documentation.
 # https://github.com/snipe/snipe-it-docker
 
-version: '3'
-
 services:
   snipe-it:
     image: snipe/snipe-it:latest
@@ -12,18 +10,8 @@ services:
       - snipe-it-db
     ports:
       - "8080:80"
-    environment:
-      - MYSQL_PORT_3306_TCP_ADDR=snipe-it-db
-      - MYSQL_PORT_3306_TCP_PORT=3306
-      - MYSQL_DATABASE=snipeit
-      - MYSQL_USER=snipeit
-      - MYSQL_PASSWORD=password # Change this for production
-      - APP_ENV=development
-      - APP_DEBUG=true
-      - APP_KEY=base64:+KYcc42lLwvoOGoBnhMaZI4jet87x4dgcM+TzjCWNc0= # Run 'php artisan key:generate --show' to get a key
-      - APP_URL=http://localhost:8080
-      - APP_TIMEZONE=America/Chicago
-      - APP_LOCALE=en
+    env_file:
+      - .env
     volumes:
       - snipe-it-data:/var/lib/snipeit
 
@@ -32,11 +20,8 @@ services:
     container_name: snipe-it-db
     ports:
       - "3306:3306"
-    environment:
-      - MYSQL_DATABASE=snipeit
-      - MYSQL_USER=snipeit
-      - MYSQL_PASSWORD=password # Change this for production
-      - MYSQL_ROOT_PASSWORD=supersecret # Change this for production
+    env_file:
+      - .env
     volumes:
       - snipe-it-db-data:/var/lib/mysql
 
