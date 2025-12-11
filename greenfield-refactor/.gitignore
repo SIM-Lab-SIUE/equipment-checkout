@@ -31,7 +31,11 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+# Ignore local .env but allow a committed example like .env.example
+.env
+.env.local
+.snipeit.env
+.env.*
 
 # vercel
 .vercel
@@ -39,3 +43,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Added exclusions for Prisma and Docker
+/prisma/generated/
+/docker/apache/servername.conf
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Ignore IDE-specific files
+.vscode/
+.idea/

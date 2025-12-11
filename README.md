@@ -1,103 +1,36 @@
-# SIUE Mass Communications Equipment Checkout
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-This repository contains the source code for the web application used to manage and reserve equipment for the Mass Communications department at Southern Illinois University Edwardsville.
+## Getting Started
 
-## Project Overview
+First, run the development server:
 
-This project uses a hybrid open-source model, combining a powerful backend asset management system with a custom-built frontend for the student reservation experience.
-
-- **Backend (Snipe-IT):** A robust, open-source IT asset management system used by staff to manage all equipment, users, and checkout history.
-- **Frontend (Next.js):** A custom, modern web application that students use to browse equipment, make reservations based on a block schedule, and manage their accounts.
-
-## Project Structure
-
-```
-/
-├── backend/
-│   └── docker-compose.yml  (For running a local Snipe-IT instance)
-│
-└── frontend/
-    ├── src/                (Next.js application source code)
-    ├── package.json        (Frontend dependencies)
-    └── ...                 (Other Next.js files)
-
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Getting Started: Local Development
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Prerequisites
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- Git
-- Node.js (v18 or later)
-- Docker and Docker Compose
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### 1. Backend Setup (Snipe-IT via Docker)
+## Learn More
 
-The backend runs in Docker containers. This is the easiest way to get a fully functional Snipe-IT instance running locally.
+To learn more about Next.js, take a look at the following resources:
 
-1. Navigate to the `backend` directory:
-    
-    ```
-    cd backend
-    
-    ```
-    
-2. Start the Docker containers:
-    
-    ```
-    docker-compose up -d
-    
-    ```
-    
-3. Snipe-IT will be available at `http://localhost:8080`. The first run may take a few minutes to initialize the database.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-2. Copy the example environment file and fill in your own secrets:
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-    ```bash
-    cp backend/.env.example backend/.env
-    # Edit backend/.env and set your own APP_KEY, DB_PASSWORD, and MYSQL_ROOT_PASSWORD
-    ```
+## Deploy on Vercel
 
-3. Start the backend services:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-    ```bash
-    cd backend
-    docker compose up -d
-    ```
-
-4. Access Snipe-IT at [http://localhost:8080](http://localhost:8080)
-
----
-
-**Security Note:**
-- Never commit your real `.env` file to the repository. Only commit `.env.example` with placeholder values.
-- The `.gitignore` is already set up to protect your secrets.
-
-### 2. Frontend Setup
-
-1. Navigate to the `frontend` directory:
-    
-    ```
-    cd ../frontend
-    
-    ```
-    
-2. Install the necessary dependencies:
-    
-    ```
-    npm install
-    
-    ```
-    
-3. Run the development server:
-    
-    ```
-    npm run dev
-    
-    ```
-    
-4. The student-facing application will be available at `http://localhost:3000`.
-
-## Technology Stack
-
-Please refer to the [Technology Stack Overview](https://www.google.com/search?q=tech_stack.md) document for a detailed breakdown of the technologies used in this project.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
